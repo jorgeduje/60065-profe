@@ -5,10 +5,3 @@ export const Card = () => {
     </div>
   );
 };
-
-// Card()
-// card()
-{
-  /* <Card /> 
-<card /> */
-}
