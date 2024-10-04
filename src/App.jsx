@@ -1,16 +1,12 @@
-// import { Footer } from "./components/layout/footer/Footer";
-import Counter from "./components/common/counter/Counter";
-import { Navbar } from "./components/layout/navbar/Navbar";
-import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
+import PruebaComponentes from "./PruebaComponentes";
+// import { PruebaGrid } from "./PruebaGrid";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      {/* <ItemListContainer /> */}
-      {/* <Footer /> */}
-      <Counter />
-    </>
+    <div>
+      {/* <PruebaGrid /> */}
+      <PruebaComponentes />
+    </div>
   );
 }
 
