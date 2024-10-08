@@ -1,8 +1,9 @@
 import { Card } from "../../common/card/Card";
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({ darkMode }) => {
+  console.log("itemlist ", darkMode);
   return (
-    <div>
+    <div style={{ backgroundColor: darkMode ? "black" : "white" }}>
       <Card title="nike" price={1200} stock={5} />
       <Card title="nike 2" price={500} stock={15} />
       <Card title="wilson " price={111} stock={51} />
