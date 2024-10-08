@@ -2,10 +2,16 @@ import { CartWidget } from "../../common/cartWidget/CartWidget";
 import "./navbar.css";
 import imagenLogon from "../../../assets/images/logo.png";
 
-export const Navbar = () => {
+export const Navbar = ({ darkMode }) => {
+  console.log("navbar ", darkMode);
   return (
     <>
-      <div className="container-navbar">
+      <div
+        className={
+          darkMode ? "container-navbar-dark navbar" : "container-navbar navbar"
+        }
+        // style={{ backgroundColor: darkMode ? "black" : "steelblue" }}
+      >
         {/* <h2>Comision-60065</h2> */}
         {/* <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdu3wld1Zlzz4rpjiiiEDF_aLobx8JEa9DVw&s"
@@ -37,3 +43,25 @@ export const Navbar = () => {
     </>
   );
 };
+
+// // if
+//  if(condicion){
+//   --> esto
+//  }else{
+//   ---> esto
+//  }
+//  // ternario / 2 caminos
+// condicion ? esto : esto
+
+// // switch
+
+// if(){
+
+// }else if() {
+
+// }else if(){
+
+// }
+//   else{
+
+// }
