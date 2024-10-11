@@ -1,5 +1,6 @@
 .container-navbar {
   background-color: steelblue;
+  width: 100%;
 }
 .container-navbar-dark {
   background-color: red;
@@ -8,4 +9,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.navbar-image{
+  width: 80px;
+  cursor: pointer;
+}
+.navbar-ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar-ul-li{
+  list-style: none;
+  cursor: pointer;
 }

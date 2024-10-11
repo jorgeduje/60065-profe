@@ -1,23 +1,40 @@
-import { Card } from "../../common/card/Card";
+import { useEffect, useState } from "react";
+import { products } from "../../../products";
+import { ItemList } from "../../common/ItemList/ItemList";
+import "./itemListContainer.css";
 
-export const ItemListContainer = ({ darkMode }) => {
-  console.log("itemlist ", darkMode);
-  return (
-    <div style={{ backgroundColor: darkMode ? "black" : "white" }}>
-      <Card title="nike" price={1200} stock={5} />
-      <Card title="nike 2" price={500} stock={15} />
-      <Card title="wilson " price={111} stock={51} />
-      <Card title="pepe" price={300} stock={12} />
-    </div>
-  );
+let myProductsPromise = new Promise((res, rej) => {
+	setTimeout(() => {
+		if (products.length === 0) {
+			rej("Productos vacios");
+		} else {
+			res(products);
+		}
+	}, 2000);
+});
+
+export const ItemListContainer = () => {
+	const [myProducts, setMyProducts] = useState([]);
+
+	useEffect(() => {
+		myProductsPromise
+			.then((data) => {
+				// if (data.length === 4) throw new Error("Error");
+				setMyProducts(data);
+			})
+			.catch((err) => {
+				console.log(err);
+			})
+			.finally(() => {
+				// console.log("SIEMPRE SE EJECUTA")
+			});
+	}, []);
+
+  console.log(myProducts);
+
+	return (
+		<div className="il-container">
+      <ItemList myProducts={myProducts} />
+		</div>
+	);
 };
-
-// const sumar =  ( {}) => {
-//   return 2 + 2;
-// };
-
-// sumar("dadsa", "dasd");
-
-// sumar(1, 3);
-// sumar(4, 2);
-// sumar(6, 2);

@@ -7,3 +7,14 @@
 .container {
   background-color: red;
 }
+
+.appContainer{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px 0px;
+}

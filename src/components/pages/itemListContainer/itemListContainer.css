@@ -1,0 +1,9 @@
+.il-container{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    gap: 60px;
+    background-color: rgba(128, 128, 128, 0.07);
+}
