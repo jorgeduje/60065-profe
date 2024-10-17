@@ -4,7 +4,8 @@ export let products = [
     title: "zapatila nike",
     price: 12432,
     description: "estas son las mejores",
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1686581567/images_teykwq.jpg",
+    imageUrl:
+      "https://res.cloudinary.com/dnqfh2chg/image/upload/v1686581567/images_teykwq.jpg",
     stock: 12,
     category: "deportivas",
   },
@@ -15,7 +16,8 @@ export let products = [
     stock: 5,
     description: "Ultra livianas y cuentan con camara de aire",
     category: "deportivas",
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg",
+    imageUrl:
+      "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg",
   },
   {
     id: "3",
@@ -25,7 +27,8 @@ export let products = [
     description:
       "Las clasicas zapatillas que van para cualquier momento del dia",
     category: "urbanas",
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg",
+    imageUrl:
+      "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg",
   },
   {
     id: "4",
@@ -34,6 +37,7 @@ export let products = [
     stock: 5,
     description: "Zapatillas de ultima generacion para el deporte",
     category: "urbanas",
-    img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg",
+    imageUrl:
+      "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg",
   },
 ];
