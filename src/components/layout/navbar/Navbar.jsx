@@ -1,6 +1,6 @@
 import { CartWidget } from "../../common/cartWidget/CartWidget";
 import "./navbar.css";
-import imagenLogon from "../../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ darkMode }) => {
   return (
@@ -10,18 +10,20 @@ export const Navbar = ({ darkMode }) => {
           darkMode ? "container-navbar-dark navbar" : "container-navbar navbar"
         }
       >
-        <img
-          src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1727995204/images_hthelg.png"
-          alt=""
-          style={{
-            width: "100px",
-            height: "100px",
-          }}
-        />
+        <Link to="/">
+          <img
+            src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1727995204/images_hthelg.png"
+            alt=""
+            style={{
+              width: "100px",
+              height: "100px",
+            }}
+          />
+        </Link>
         <ul style={{ display: "flex", gap: "10px" }}>
-          <li>Todas</li>
-          <li>Urbanas</li>
-          <li>Deportivas</li>
+          <Link to="/">Todas</Link>
+          <Link to="/category/urbanas">Urbanas</Link>
+          <Link to="/category/deportivas">Deportivas</Link>
         </ul>
 
         <CartWidget />
