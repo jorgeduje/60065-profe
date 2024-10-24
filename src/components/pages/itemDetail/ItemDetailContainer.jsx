@@ -13,7 +13,12 @@ const ItemDetailContainer = () => {
     setItem(productSelected);
   }, [id]);
 
-  return <ItemDetail item={item} />;
+  const agregarAlCarrito = (cantidad) => {
+    let objeto = { ...item, quantity: cantidad };
+    console.log(objeto);
+  };
+
+  return <ItemDetail item={item} agregarAlCarrito={agregarAlCarrito} />;
 };
 
 export default ItemDetailContainer;
