@@ -1,4 +1,5 @@
 import { Card } from "../../common/card/Card";
+import ModalCustom from "../../common/ModalCustom";
 
 const ItemList = ({ items }) => {
   return (
@@ -23,8 +24,27 @@ const ItemList = ({ items }) => {
           />
         ))}
       </div>
+
+      {/* <ModalCustom title="titulo custom">
+        <div>
+          <h5>un formulario</h5>
+          <form action="">
+            <input type="text" placeholder="nombre" />
+          </form>
+        </div>
+      </ModalCustom> */}
     </>
   );
 };
 
 export default ItemList;
+// let children = (
+//   <div>
+//     <h5>un formulario</h5>
+//     <form action="">
+//       <input type="text" placeholder="nombre" />
+//     </form>
+//   </div>
+// );
+
+// { children }

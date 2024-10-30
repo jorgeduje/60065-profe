@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { products } from "../../../products";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const { addToCart } = useContext(CartContext);
 
   const [item, setItem] = useState({});
 
@@ -15,7 +17,7 @@ const ItemDetailContainer = () => {
 
   const agregarAlCarrito = (cantidad) => {
     let objeto = { ...item, quantity: cantidad };
-    console.log(objeto);
+    addToCart(objeto);
   };
 
   return <ItemDetail item={item} agregarAlCarrito={agregarAlCarrito} />;
