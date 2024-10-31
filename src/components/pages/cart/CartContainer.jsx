@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 
 const CartContainer = () => {
-  const { cart, resetCart, removeById } = useContext(CartContext);
+  const { cart, resetCart, removeById, getTotalAmount } =
+    useContext(CartContext);
+
+  let totalEnElCarrito = getTotalAmount(); // un numero
 
   return (
     <div>
@@ -27,7 +30,15 @@ const CartContainer = () => {
         );
       })}
 
-      <button onClick={resetCart}>Limpiar carrito</button>
+      {/* {cart.length > 0 ? (
+        <button onClick={resetCart}>Limpiar carrito</button>
+      ) : null} */}
+
+      {cart.length > 0 && <button onClick={resetCart}>Limpiar carrito</button>}
+
+      <h2 style={{ color: cart.length > 0 ? "red" : "blue" }}>
+        El total a pagar es {totalEnElCarrito}
+      </h2>
 
       <Link to="/checkout" style={{ color: "black" }}>
         Finalizar compra
