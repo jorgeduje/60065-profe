@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { products } from "../../../products";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { Box, CircularProgress, Skeleton } from "@mui/material";
+import { Skeleton } from "@mui/material";
 
 export const ItemListContainer = () => {
   const { name } = useParams();
@@ -18,9 +18,7 @@ export const ItemListContainer = () => {
       resolve(name ? unaFraccion : products);
     });
     getProducts.then((res) => {
-      setTimeout(() => {
-        setItems(res);
-      }, 2000);
+      setItems(res);
     });
   }, [name]);
 

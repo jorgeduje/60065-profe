@@ -1,30 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
-import CartContainer from "./components/pages/cart/CartContainer";
-import { Navbar } from "./components/layout/navbar/Navbar";
-import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
 import Checkout from "./components/pages/checkout/Checkout";
 import { CartContextProvider } from "./context/CartContext";
 import { Toaster } from "sonner";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+import Layout from "./components/layout/Layout";
+import { routes } from "./routes/routes";
 
 function App() {
   return (
     <BrowserRouter>
       <Toaster duration={2000} richColors position="top-center" />
       <CartContextProvider>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:name" element={<ItemListContainer />} />
+          <Route element={<Layout />}>
+            {routes.map(({ id, path, Element }) => (
+              <Route key={id} path={path} element={<Element />} />
+            ))}
 
-          <Route path="/cart" element={<CartContainer />} />
-
-          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-
-          <Route path="/login" element={<h1>Login</h1>} />
-          <Route path="/checkout" element={<Checkout />} />
-
-          <Route path="*" element={<h2>404 not found</h2>} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/checkout" element={<Checkout />} />
+            </Route>
+          </Route>
         </Routes>
       </CartContextProvider>
     </BrowserRouter>
@@ -32,3 +28,11 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <> ---> a estas rutas le doy o no acceso en base a una condicion 
+  <Route /> 
+  <Route /> 
+  <Route /> 
+</> */
+}
