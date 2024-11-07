@@ -1,5 +1,6 @@
 .container-navbar {
   background-color: steelblue;
+  padding: 0 20px;
 }
 .container-navbar-dark {
   background-color: red;

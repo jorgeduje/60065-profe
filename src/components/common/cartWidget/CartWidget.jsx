@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import "./cartWidget.css";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
+import Badge from "@mui/material/Badge";
 
 export const CartWidget = () => {
   const { cart } = useContext(CartContext); // siempre devuelve el objeto del value
 
   return (
     <Link to="/cart">
-      <FaShoppingCart />
-      <span>{cart.length}</span>
+      <Badge badgeContent={cart.length} color="primary" showZero>
+        <FaShoppingCart size={"22px"} />
+      </Badge>
     </Link>
   );
 };
