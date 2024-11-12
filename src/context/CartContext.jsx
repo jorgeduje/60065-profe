@@ -12,7 +12,6 @@ export const CartContextProvider = ({ children }) => {
     let isInCart = cart.some((el) => el.id === product.id); // booleano
 
     if (isInCart) {
-      console.log("se ejecuta el if");
       // generar un nuevo array, igual que el anterior pero con un { } modificado
       // con ese array remplazar el anteriror
 
@@ -29,7 +28,6 @@ export const CartContextProvider = ({ children }) => {
 
       setCart(nuevoArray);
     } else {
-      console.log("se ejecuta el else");
       setCart([...cart, product]);
     }
   };
